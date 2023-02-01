@@ -18,6 +18,6 @@ struct NewsModel: Codable {
         let description: String
         let publishedAt: String
         let content: String
-        
+        let urlToImage: String?
     }
 }

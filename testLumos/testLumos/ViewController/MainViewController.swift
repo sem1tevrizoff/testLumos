@@ -46,9 +46,9 @@ class MainViewController: UIViewController {
     }
     
     private func configureTableView() {
-        self.viewModel.setupMainInfo {
+        self.viewModel.newsRequest { [weak self] in
             DispatchQueue.main.async {
-                self._view.newsTableView.tableView.reloadData()
+                self?._view.newsTableView.tableView.reloadData()
             }
         }
     }
@@ -62,13 +62,16 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.reuseID, for: indexPath) as? NewsTableViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: NewsTableViewCell.reuseID, for: indexPath) as? NewsTableViewCell,
+              let model = viewModel.newsModel?.articles[indexPath.row]
+        else { return UITableViewCell() }
         
+        cell.setup(with: model)
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 150
     }
     
 }

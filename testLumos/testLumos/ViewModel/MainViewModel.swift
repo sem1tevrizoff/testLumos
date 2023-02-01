@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 class MainViewModel {
     
@@ -17,7 +18,7 @@ class MainViewModel {
         self.coordinator = coordinator
     }
     
-    func setupMainInfo(completion: @escaping () -> ()) {
+    func newsRequest(completion: @escaping () -> ()) {
         networkingManager.request(endpoint: NewsAPI.link) { (result: Result<NewsModel, NetworkingError>) in
             switch result {
             case .success(let result):

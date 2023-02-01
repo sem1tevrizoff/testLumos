@@ -20,22 +20,61 @@ class NewsTableViewCell: UITableViewCell {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
+        label.numberOfLines = 0
         return label
     }()
     
     private lazy var authorLabel: UILabel = {
         let label = UILabel()
+        label.textAlignment = .right
+        label.font = UIFont(name: "Helvetica", size: 12)
         return label
     }()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        mainSetup()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-
+    
+    private func mainSetup() {
+        setupLayouts()
+        setupLayoutConstraints()
+    }
+    
+    private func setupLayouts() {
+        [titleImage, titleLabel, authorLabel].forEach {
+            contentView.addSubview($0)
+            $0.translatesAutoresizingMaskIntoConstraints = false
+        }
+    }
+    
+    private func setupLayoutConstraints() {
+        NSLayoutConstraint.activate([
+            titleImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
+            titleImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 2),
+            titleImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -2),
+            titleImage.widthAnchor.constraint(equalToConstant: 160),
+            
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 2),
+            titleLabel.leadingAnchor.constraint(equalTo: titleImage.trailingAnchor, constant: 5),
+            titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
+            titleLabel.bottomAnchor.constraint(equalTo: authorLabel.topAnchor, constant: 10),
+            
+            authorLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
+            authorLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 130),
+            authorLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
+            authorLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
+    }
+    
+    func setup(with model: NewsModel.Articles) {
+        titleImage.loadImageFromUrl(urlString: model.urlToImage ?? "")
+        titleLabel.text = model.title
+        authorLabel.text = model.publishedAt.getDate()
+    }
 }
+
