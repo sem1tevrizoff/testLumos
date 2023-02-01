@@ -57,15 +57,13 @@ class NewsTableViewCell: UITableViewCell {
             titleImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
             titleImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 2),
             titleImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -2),
-            titleImage.widthAnchor.constraint(equalToConstant: 160),
+            titleImage.widthAnchor.constraint(equalToConstant: 180),
             
-            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 2),
+            titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
             titleLabel.leadingAnchor.constraint(equalTo: titleImage.trailingAnchor, constant: 5),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
-            titleLabel.bottomAnchor.constraint(equalTo: authorLabel.topAnchor, constant: 10),
             
             authorLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 5),
-            authorLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 130),
             authorLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -5),
             authorLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
         ])
