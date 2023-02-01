@@ -7,28 +7,22 @@
 
 import Foundation
 
-protocol MainRequest: AnyObject {
-    func updateTable()
-}
-
 class MainViewModel {
     
     private let coordinator: AppCoordinator
     private let networkingManager = NetworkingManager()
-    weak var delegate: MainRequest?
     var newsModel: NewsModel?
     
     init(coordinator: AppCoordinator) {
         self.coordinator = coordinator
-        setupMainInfo()
     }
     
-    func setupMainInfo() {
+    func setupMainInfo(completion: @escaping () -> ()) {
         networkingManager.request(endpoint: NewsAPI.link) { (result: Result<NewsModel, NetworkingError>) in
             switch result {
             case .success(let result):
                 self.newsModel = result
-                self.delegate?.updateTable()
+                completion()
             case .failure(let error):
                 print(error)
             }

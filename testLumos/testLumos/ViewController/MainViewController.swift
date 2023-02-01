@@ -33,7 +33,7 @@ class MainViewController: UIViewController {
     }
     
     private func mainSetup() {
-        viewModel.delegate = self
+        configureTableView()
         configureNavigationItems()
     }
     
@@ -43,6 +43,14 @@ class MainViewController: UIViewController {
         navigationItem.largeTitleDisplayMode = .automatic
         navigationController?.navigationBar.sizeToFit()
         _view.newsTableView.tableView.contentInsetAdjustmentBehavior = .never
+    }
+    
+    private func configureTableView() {
+        self.viewModel.setupMainInfo {
+            DispatchQueue.main.async {
+                self._view.newsTableView.tableView.reloadData()
+            }
+        }
     }
 }
 
@@ -63,13 +71,4 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         return 100
     }
     
-}
-
-extension MainViewController: MainRequest {
-    
-    func updateTable() {
-        DispatchQueue.main.async {
-            self._view.newsTableView.tableView.reloadData()
-        }
-    }
 }

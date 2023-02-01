@@ -13,7 +13,21 @@ class NewsTableViewCell: UITableViewCell {
         String(describing: self)
     }
     
-
+    private lazy var titleImage: UIImageView = {
+        let imageView = UIImageView()
+        return imageView
+    }()
+    
+    private lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    
+    private lazy var authorLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
