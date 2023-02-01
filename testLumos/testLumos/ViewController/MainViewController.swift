@@ -14,6 +14,8 @@ class MainViewController: UIViewController {
     
     override func loadView() {
         view = _view
+        _view.newsTableView.tableView.delegate = self
+        _view.newsTableView.tableView.dataSource = self
     }
 
     override func viewDidLoad() {
@@ -31,8 +33,7 @@ class MainViewController: UIViewController {
     }
     
     private func mainSetup() {
-        _view.newsTableView.tableView.delegate = self
-        _view.newsTableView.tableView.dataSource = self
+        viewModel.delegate = self
         configureNavigationItems()
     }
     
@@ -45,10 +46,11 @@ class MainViewController: UIViewController {
     }
 }
 
+
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return viewModel.newsModel?.articles.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,4 +59,17 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
+}
+
+extension MainViewController: MainRequest {
+    
+    func updateTable() {
+        DispatchQueue.main.async {
+            self._view.newsTableView.tableView.reloadData()
+        }
+    }
 }
