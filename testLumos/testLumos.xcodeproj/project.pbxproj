@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		2F8BE6B5298A50FF00FB6222 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8BE6B4298A50FF00FB6222 /* AppDelegate.swift */; };
 		2F8BE6B7298A50FF00FB6222 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8BE6B6298A50FF00FB6222 /* SceneDelegate.swift */; };
-		2F8BE6B9298A50FF00FB6222 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8BE6B8298A50FF00FB6222 /* ViewController.swift */; };
-		2F8BE6BC298A50FF00FB6222 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F8BE6BA298A50FF00FB6222 /* Main.storyboard */; };
+		2F8BE6B9298A50FF00FB6222 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8BE6B8298A50FF00FB6222 /* MainViewController.swift */; };
 		2F8BE6BE298A510000FB6222 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F8BE6BD298A510000FB6222 /* Assets.xcassets */; };
 		2F8BE6C1298A510000FB6222 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F8BE6BF298A510000FB6222 /* LaunchScreen.storyboard */; };
+		2F8BE6C9298A517E00FB6222 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8BE6C8298A517E00FB6222 /* AppCoordinator.swift */; };
+		2F8BE6CB298A51AC00FB6222 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8BE6CA298A51AC00FB6222 /* MainViewModel.swift */; };
+		2F8BE6CD298A51CC00FB6222 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8BE6CC298A51CC00FB6222 /* MainView.swift */; };
+		2F8BE6D2298A534A00FB6222 /* NewsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8BE6D1298A534A00FB6222 /* NewsTableView.swift */; };
+		2F8BE6D5298A550600FB6222 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8BE6D4298A550600FB6222 /* NewsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2F8BE6B1298A50FF00FB6222 /* testLumos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testLumos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F8BE6B4298A50FF00FB6222 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F8BE6B6298A50FF00FB6222 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2F8BE6B8298A50FF00FB6222 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2F8BE6BB298A50FF00FB6222 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2F8BE6B8298A50FF00FB6222 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2F8BE6BD298A510000FB6222 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2F8BE6C0298A510000FB6222 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F8BE6C2298A510000FB6222 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F8BE6C8298A517E00FB6222 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		2F8BE6CA298A51AC00FB6222 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		2F8BE6CC298A51CC00FB6222 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		2F8BE6D1298A534A00FB6222 /* NewsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableView.swift; sourceTree = "<group>"; };
+		2F8BE6D4298A550600FB6222 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,13 +66,49 @@
 			children = (
 				2F8BE6B4298A50FF00FB6222 /* AppDelegate.swift */,
 				2F8BE6B6298A50FF00FB6222 /* SceneDelegate.swift */,
-				2F8BE6B8298A50FF00FB6222 /* ViewController.swift */,
-				2F8BE6BA298A50FF00FB6222 /* Main.storyboard */,
+				2F8BE6D0298A532C00FB6222 /* ViewModel */,
+				2F8BE6CF298A532000FB6222 /* ViewController */,
+				2F8BE6CE298A531900FB6222 /* View */,
+				2F8BE6C8298A517E00FB6222 /* AppCoordinator.swift */,
+				2F8BE6D4298A550600FB6222 /* NewsTableViewCell.swift */,
 				2F8BE6BD298A510000FB6222 /* Assets.xcassets */,
 				2F8BE6BF298A510000FB6222 /* LaunchScreen.storyboard */,
 				2F8BE6C2298A510000FB6222 /* Info.plist */,
 			);
 			path = testLumos;
+			sourceTree = "<group>";
+		};
+		2F8BE6CE298A531900FB6222 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2F8BE6CC298A51CC00FB6222 /* MainView.swift */,
+				2F8BE6D3298A535100FB6222 /* CustomView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2F8BE6CF298A532000FB6222 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2F8BE6B8298A50FF00FB6222 /* MainViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2F8BE6D0298A532C00FB6222 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2F8BE6CA298A51AC00FB6222 /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2F8BE6D3298A535100FB6222 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				2F8BE6D1298A534A00FB6222 /* NewsTableView.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +171,6 @@
 			files = (
 				2F8BE6C1298A510000FB6222 /* LaunchScreen.storyboard in Resources */,
 				2F8BE6BE298A510000FB6222 /* Assets.xcassets in Resources */,
-				2F8BE6BC298A50FF00FB6222 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +181,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F8BE6B9298A50FF00FB6222 /* ViewController.swift in Sources */,
+				2F8BE6D2298A534A00FB6222 /* NewsTableView.swift in Sources */,
+				2F8BE6CB298A51AC00FB6222 /* MainViewModel.swift in Sources */,
+				2F8BE6D5298A550600FB6222 /* NewsTableViewCell.swift in Sources */,
+				2F8BE6CD298A51CC00FB6222 /* MainView.swift in Sources */,
+				2F8BE6C9298A517E00FB6222 /* AppCoordinator.swift in Sources */,
+				2F8BE6B9298A50FF00FB6222 /* MainViewController.swift in Sources */,
 				2F8BE6B5298A50FF00FB6222 /* AppDelegate.swift in Sources */,
 				2F8BE6B7298A50FF00FB6222 /* SceneDelegate.swift in Sources */,
 			);
@@ -147,14 +195,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2F8BE6BA298A50FF00FB6222 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2F8BE6BB298A50FF00FB6222 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2F8BE6BF298A510000FB6222 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,7 +332,6 @@
 				INFOPLIST_FILE = testLumos/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +359,6 @@
 				INFOPLIST_FILE = testLumos/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
