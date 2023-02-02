@@ -9,23 +9,12 @@ import UIKit
 
 class NewsView: UIView {
     
-    lazy var newsImageView: UIImageView = {
-        let imageView = UIImageView()
-        return imageView
-    }()
+    lazy var contentNewsView = ContentNewsView()
     
-    lazy var newsHeaderLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "Helvetica", size: 20)
-        label.textAlignment = .right
-        return label
-    }()
-    
-    lazy var newsTextView: UITextView = {
-        let textView = UITextView()
-        textView.font = UIFont(name: "Helvetica", size: 35)
-        textView.backgroundColor = .gray
-        return textView
+    private lazy var scrollView: UIScrollView = {
+        let scroll = UIScrollView()
+        scroll.showsVerticalScrollIndicator = false
+        return scroll
     }()
 
     init() {
@@ -43,34 +32,26 @@ class NewsView: UIView {
     }
     
     private func setupLayouts() {
-        [newsImageView,newsHeaderLabel,newsTextView].forEach {
-            addSubview($0)
-            $0.translatesAutoresizingMaskIntoConstraints = false
-        }
+        addSubview(scrollView)
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.addSubview(contentNewsView)
+        contentNewsView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private func setupLayoutConstraints() {
         NSLayoutConstraint.activate([
-            newsImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            newsImageView.topAnchor.constraint(equalTo: topAnchor, constant: 100),
-            newsImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            newsImageView.heightAnchor.constraint(equalToConstant: 260),
+            scrollView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            scrollView.topAnchor.constraint(equalTo: topAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: bottomAnchor),
             
-            newsHeaderLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            newsHeaderLabel.topAnchor.constraint(equalTo: newsImageView.bottomAnchor),
-            newsHeaderLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-            
-            newsTextView.topAnchor.constraint(equalTo: newsHeaderLabel.bottomAnchor, constant: 10),
-            newsTextView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            newsTextView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            newsTextView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            contentNewsView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
+            contentNewsView.topAnchor.constraint(equalTo: scrollView.topAnchor),
+            contentNewsView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
+            contentNewsView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
+            contentNewsView.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
         ])
     }
-    
-    func configure(with model: NewsModel.Articles) {
-        newsImageView.loadImageFromUrl(urlString: model.urlToImage ?? "")
-        newsHeaderLabel.text = "\(model.author ?? "") \(model.publishedAt.getDate())"
-        newsTextView.text = model.content
-    }
+
     
 }

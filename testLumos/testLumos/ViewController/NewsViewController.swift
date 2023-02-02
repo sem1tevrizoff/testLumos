@@ -16,7 +16,7 @@ class NewsViewController: UIViewController {
     override func loadView() {
         view = _view
         _view.backgroundColor = .gray
-        _view.configure(with: newsModel)
+        _view.contentNewsView.configure(with: newsModel)
     }
 
     override func viewDidLoad() {

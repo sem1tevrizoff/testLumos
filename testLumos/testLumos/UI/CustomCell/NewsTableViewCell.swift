@@ -70,7 +70,7 @@ class NewsTableViewCell: UITableViewCell {
     }
     
     func configure(with model: NewsModel.Articles) {
-        titleImage.loadImageFromUrl(urlString: model.urlToImage ?? "")
+        titleImage.loadImageFromUrl(urlString: model.urlToImage ?? "" , placeholder: UIImage(systemName: "photo.artframe"))
         titleLabel.text = model.title
         authorLabel.text = model.publishedAt.getDate()
     }

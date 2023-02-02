@@ -29,6 +29,7 @@
 		2F8BE6ED298BA94D00FB6222 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8BE6EC298BA94D00FB6222 /* NewsViewModel.swift */; };
 		2F8BE6EF298BA96300FB6222 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8BE6EE298BA96300FB6222 /* NewsViewController.swift */; };
 		2F8BE6F1298BA97100FB6222 /* NewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8BE6F0298BA97100FB6222 /* NewsView.swift */; };
+		2F8BE6F3298C1EFD00FB6222 /* ContentNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8BE6F2298C1EFD00FB6222 /* ContentNewsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		2F8BE6EC298BA94D00FB6222 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		2F8BE6EE298BA96300FB6222 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		2F8BE6F0298BA97100FB6222 /* NewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsView.swift; sourceTree = "<group>"; };
+		2F8BE6F2298C1EFD00FB6222 /* ContentNewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentNewsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				2F8BE6D1298A534A00FB6222 /* NewsTableView.swift */,
+				2F8BE6F2298C1EFD00FB6222 /* ContentNewsView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				2F8BE6D5298A550600FB6222 /* NewsTableViewCell.swift in Sources */,
 				2F8BE6EF298BA96300FB6222 /* NewsViewController.swift in Sources */,
 				2F8BE6CD298A51CC00FB6222 /* MainView.swift in Sources */,
+				2F8BE6F3298C1EFD00FB6222 /* ContentNewsView.swift in Sources */,
 				2F8BE6DD298A5AF500FB6222 /* NetworkingError.swift in Sources */,
 				2F8BE6C9298A517E00FB6222 /* AppCoordinator.swift in Sources */,
 				2F8BE6B9298A50FF00FB6222 /* MainViewController.swift in Sources */,
