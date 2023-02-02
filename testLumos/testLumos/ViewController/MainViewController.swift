@@ -33,7 +33,7 @@ class MainViewController: UIViewController {
     }
     
     private func mainSetup() {
-        configureTableView()
+        configureNewsRequest()
         configureNavigationItems()
     }
     
@@ -45,7 +45,7 @@ class MainViewController: UIViewController {
         _view.newsTableView.tableView.contentInsetAdjustmentBehavior = .never
     }
     
-    private func configureTableView() {
+    private func configureNewsRequest() {
         self.viewModel.newsRequest { [weak self] in
             DispatchQueue.main.async {
                 self?._view.newsTableView.tableView.reloadData()
@@ -76,7 +76,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let news = viewModel.newsModel[indexPath.row]
-        viewModel.coordinator.createNewsScreen(with: news)
+        viewModel.goToNewsScreen(with: news)
     }
     
 }

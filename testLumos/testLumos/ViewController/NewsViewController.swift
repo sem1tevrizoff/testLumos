@@ -15,12 +15,12 @@ class NewsViewController: UIViewController {
     
     override func loadView() {
         view = _view
+        _view.backgroundColor = .gray
+        _view.configure(with: newsModel)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        _view.backgroundColor = .gray
-        _view.configure(with: newsModel)
     }
     
     init(viewModel: NewsViewModel, newsModel: NewsModel.Articles) {

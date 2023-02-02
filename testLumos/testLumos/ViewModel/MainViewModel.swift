@@ -29,4 +29,8 @@ class MainViewModel {
             }
         }
     }
+    
+    func goToNewsScreen(with model: NewsModel.Articles) {
+        coordinator.createNewsScreen(with: model)
+    }
 }
