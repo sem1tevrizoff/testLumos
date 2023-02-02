@@ -10,9 +10,9 @@ import Combine
 
 class MainViewModel {
     
-    private let coordinator: AppCoordinator
+    let coordinator: AppCoordinator
     private let networkingManager = NetworkingManager()
-    var newsModel: NewsModel?
+    var newsModel = [NewsModel.Articles]()
     
     init(coordinator: AppCoordinator) {
         self.coordinator = coordinator
@@ -22,7 +22,7 @@ class MainViewModel {
         networkingManager.request(endpoint: NewsAPI.link) { (result: Result<NewsModel, NetworkingError>) in
             switch result {
             case .success(let result):
-                self.newsModel = result
+                self.newsModel = result.articles
                 completion()
             case .failure(let error):
                 print(error)

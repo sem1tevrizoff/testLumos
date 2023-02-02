@@ -69,7 +69,7 @@ class NewsTableViewCell: UITableViewCell {
         ])
     }
     
-    func setup(with model: NewsModel.Articles) {
+    func configure(with model: NewsModel.Articles) {
         titleImage.loadImageFromUrl(urlString: model.urlToImage ?? "")
         titleLabel.text = model.title
         authorLabel.text = model.publishedAt.getDate()
