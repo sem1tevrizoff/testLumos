@@ -52,7 +52,7 @@ class NewsView: UIView {
     private func setupLayoutConstraints() {
         NSLayoutConstraint.activate([
             newsImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            newsImageView.topAnchor.constraint(equalTo: topAnchor),
+            newsImageView.topAnchor.constraint(equalTo: topAnchor, constant: 100),
             newsImageView.trailingAnchor.constraint(equalTo: trailingAnchor),
             newsImageView.heightAnchor.constraint(equalToConstant: 260),
             

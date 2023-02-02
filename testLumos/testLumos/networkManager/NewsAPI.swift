@@ -43,4 +43,3 @@ enum NewsAPI: API {
     }
 }
 
-// https://newsapi.org/v2/everything?q=tesla&from=2023-01-01&sortBy=publishedAt&apiKey=API_KEY

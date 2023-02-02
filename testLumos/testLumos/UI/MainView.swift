@@ -21,7 +21,7 @@ class MainView: UIView {
     }
     
     private func mainSetup() {
-        backgroundColor = .white
+        backgroundColor = .systemGray
         setupLayouts()
         setupLayoutConstraints()
     }

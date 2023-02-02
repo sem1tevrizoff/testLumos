@@ -12,10 +12,15 @@ class MainViewController: UIViewController {
     private let _view = MainView()
     private let viewModel: MainViewModel
     
+    private lazy var myRefreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshTableView(sender:)), for: .valueChanged)
+        return refreshControl
+    }()
+    
     override func loadView() {
         view = _view
-        _view.newsTableView.tableView.delegate = self
-        _view.newsTableView.tableView.dataSource = self
+        viewSettings()
     }
 
     override func viewDidLoad() {
@@ -52,6 +57,23 @@ class MainViewController: UIViewController {
             }
         }
     }
+    
+    @objc func refreshTableView(sender: UIRefreshControl) {
+        self.viewModel.newsRequest { [weak self] in
+            DispatchQueue.main.async {
+                self?._view.newsTableView.tableView.reloadData()
+                self?.myRefreshControl.endRefreshing()
+            }
+        }
+    }
+    
+    private func viewSettings() {
+        _view.newsTableView.tableView.delegate = self
+        _view.newsTableView.tableView.dataSource = self
+        _view.newsTableView.tableView.addSubview(myRefreshControl)
+        _view.newsTableView.tableView.refreshControl = myRefreshControl
+    }
+    
 }
 
 
